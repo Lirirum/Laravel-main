@@ -21,8 +21,15 @@ Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/services', [PageController::class, 'servicses'])->name('services');
 
 // Маршрут з параметром
-Route::get('/character/{name}', [PageController::class, 'showCharacter']);
+Route::get('/character/{id}', [PageController::class, 'showCharacter']);
+Route::get('/characters/create', [PageController::class, 'characterCreate']);
+Route::get('/characters/edit/{id}', [PageController::class, 'characterEdit']);
+Route::get('/characters/delete/{id}', [PageController::class, 'characterDelete']);
+ 
 
+Route::post('/characters', [PageController::class, 'characterPost'])->name('characterPost');
+Route::post('/characters/update/{id}', [PageController::class, 'characterUpdate'])->name('character.update');
+Route::post('/characters/destroy/{id}', [PageController::class, 'characterDestroy'])->name('character.destroy');
 
 Route::get('/ifno', function () {
     return view('info');
