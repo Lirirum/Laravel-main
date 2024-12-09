@@ -30,6 +30,13 @@ class PageController extends Controller
         return view('services');
     }
 
+    public function secret()
+    {
+        return view('secret_info');
+    }
+
+ 
+
     // Метод для сторінки з параметром
     public function showCharacter( string $id):View {
 

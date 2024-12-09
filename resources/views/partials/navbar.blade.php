@@ -1,7 +1,14 @@
 <nav class="main_nav">
-    <a href="{{ route('home') }}" class="hover:bg-gray-700 px-4 py-2 rounded">Home</a>
-    <a href="{{ route('about') }}" class="hover:bg-gray-700 px-4 py-2 rounded">About</a>
-    <a href="{{ route('services') }}" class="hover:bg-gray-700 px-4 py-2 rounded">Services</a>
-    <a href="{{ route('contact') }}" class="hover:bg-gray-700 px-4 py-2 rounded">Contact</a>
-    <a href="{{ route('info') }}" class="hover:bg-gray-700 px-4 py-2 rounded">Info</a>
+    <a href="{{ route('home') }}" >Home</a>
+    <a href="{{ route('posts.index') }}">Posts</a>
+    <a href="{{ route('posts.create') }}" >Create post</a>
+    <a href="{{ route('info') }}" >Info</a>
+    <a href="{{ route('profile.show') }}" >Profile</a>
+    @auth("web")
+        <a href="{{ route('logout') }}" >Sign out </a>
+    @endauth
+
+    @guest("web")
+        <a href="{{ route('login') }}" >Sign in </a>
+    @endguest
 </nav>
